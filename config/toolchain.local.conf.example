@@ -1,0 +1,8 @@
+# 每台主机各自的工具链配置，复制为 config/toolchain.local.conf 后按需修改（该文件不提交、不共享）。
+# 通常不需要手工创建：make / scripts/build_dependencies.sh 会自动探测并写入。
+# 相对路径以**项目根目录**为基准，例如 EzPC 与项目同级放在 ../third_party/EzPC：
+ezpc_root=../third_party/EzPC
+# 也可以填绝对路径：
+# ezpc_root=/home/admin/EzPC
+#
+# 注意：ezpc_root 只能写在这里。config/sign/common.*.conf 是两方共享的协议配置，不放本机路径。

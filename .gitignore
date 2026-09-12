@@ -1,0 +1,14 @@
+build/
+third_party/
+logs/*
+!logs/.gitkeep
+runtime/generated-config/*
+!runtime/.gitkeep
+src/sign/*.o
+src/sign/src/*.o
+src/sign/src/*.d
+src/sign/node
+src/sign/node-selftest
+src/sign/node-*
+config/toolchain.local.conf
+.patch_backup/
