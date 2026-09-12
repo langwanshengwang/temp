@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-09-11T09:32:33Z",
+  "mode": "timestamped",
+  "how": "timestamped(每次运行内容不同)",
+  "bytes": 127,
+  "sha256": "6a38969376c8e742b9cdafb47c3715236b8f018c8f71e5e11b8d4f7439ea726c",
+  "sha3_256": "0a5b76b567427a94d0783cd21f9dd171e38580386083f927d233ab82c55685bf",
+  "path": "/home/wangxiaoming/my_project/two_party_ML-DSA_signature/threshold_mldsa_2party/logs/local-m44-20260911-173233/message.txt",
+  "preview": "threshold-mldsa-2of2 demo message\nrun=local-m44-20260911-173233\nmldsa=ML-DSA-44\nutc=2026-09-11T09:32:33Z\nnonce=e288c6..."
+}

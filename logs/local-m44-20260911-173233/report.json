@@ -1,0 +1,173 @@
+{
+  "run_dir": "/home/wangxiaoming/my_project/two_party_ML-DSA_signature/threshold_mldsa_2party/logs/local-m44-20260911-173233",
+  "mldsa_mode": 44,
+  "wall_ms": 10229.0,
+  "config": {
+    "batch_size": 1,
+    "pool_size": 8,
+    "pool_mode": "refill",
+    "open_check": "strict"
+  },
+  "stats": {
+    "attempts": 5,
+    "batches": 5,
+    "accept_attempt": 5,
+    "dcf_accepts": 5,
+    "dcf_rejects": 0,
+    "opened_candidates": 5,
+    "alg7_rejects_after_open": 4,
+    "alg7_z_fail": 0,
+    "alg7_r0_fail": 4,
+    "alg7_ct0_fail": 0,
+    "alg7_hint_fail": 1,
+    "pool_items_generated": 8,
+    "pool_segments": 1,
+    "pool_refills": 0,
+    "open_checks": 2,
+    "open_check_items": 6,
+    "dfss_keygen_ms": 9529.735,
+    "dfss_eval_ms": 71.295,
+    "hint_ones": 48,
+    "cs2_audit_norm": 44
+  },
+  "dfss": {
+    "offline": {
+      "calls": 8,
+      "core_ms_per_call": 1032.6288125,
+      "core_ms_total_per_party": 8261.0305,
+      "wire_bytes": 107868160,
+      "wire_bytes_per_call": 13483520.0,
+      "candidates": 0
+    },
+    "online": {
+      "calls": 5,
+      "core_ms_per_call": 13.610999999999999,
+      "core_ms_total_per_party": 68.05499999999999,
+      "wire_bytes": 450480,
+      "wire_bytes_per_call": 90096.0,
+      "candidates": 5
+    }
+  },
+  "ctrl_bytes_p0": {
+    "sent": 131772.0,
+    "recv": 131772.0
+  },
+  "phases_p0": {
+    "handshake": {
+      "time_ms": 0.213,
+      "rounds": 1,
+      "sent_bytes": 144,
+      "recv_bytes": 144,
+      "entries": 1
+    },
+    "dkeygen": {
+      "time_ms": 2.412,
+      "rounds": 3,
+      "sent_bytes": 21616,
+      "recv_bytes": 21616,
+      "entries": 1
+    },
+    "dcf_prep": {
+      "time_ms": 9530.241,
+      "rounds": 2,
+      "sent_bytes": 48,
+      "recv_bytes": 48,
+      "entries": 1
+    },
+    "sign_attempt": {
+      "time_ms": 4.002,
+      "rounds": 10,
+      "sent_bytes": 58080,
+      "recv_bytes": 58080,
+      "entries": 5
+    },
+    "rejects_dcf_online": {
+      "time_ms": 73.739,
+      "rounds": 15,
+      "sent_bytes": 15960,
+      "recv_bytes": 15960,
+      "entries": 5
+    },
+    "open_zr_alg7": {
+      "time_ms": 3.501,
+      "rounds": 10,
+      "sent_bytes": 35040,
+      "recv_bytes": 35040,
+      "entries": 5
+    },
+    "open_check": {
+      "time_ms": 4.739,
+      "rounds": 8,
+      "sent_bytes": 832,
+      "recv_bytes": 832,
+      "entries": 2
+    },
+    "verify": {
+      "time_ms": 0.951,
+      "rounds": 1,
+      "sent_bytes": 52,
+      "recv_bytes": 52,
+      "entries": 1
+    }
+  },
+  "phases_p1": {
+    "handshake": {
+      "time_ms": 0.257,
+      "rounds": 1,
+      "sent_bytes": 144,
+      "recv_bytes": 144,
+      "entries": 1
+    },
+    "dkeygen": {
+      "time_ms": 2.395,
+      "rounds": 3,
+      "sent_bytes": 21616,
+      "recv_bytes": 21616,
+      "entries": 1
+    },
+    "dcf_prep": {
+      "time_ms": 9530.237,
+      "rounds": 2,
+      "sent_bytes": 48,
+      "recv_bytes": 48,
+      "entries": 1
+    },
+    "sign_attempt": {
+      "time_ms": 4.092,
+      "rounds": 10,
+      "sent_bytes": 58080,
+      "recv_bytes": 58080,
+      "entries": 5
+    },
+    "rejects_dcf_online": {
+      "time_ms": 73.702,
+      "rounds": 15,
+      "sent_bytes": 15960,
+      "recv_bytes": 15960,
+      "entries": 5
+    },
+    "open_zr_alg7": {
+      "time_ms": 3.447,
+      "rounds": 10,
+      "sent_bytes": 35040,
+      "recv_bytes": 35040,
+      "entries": 5
+    },
+    "open_check": {
+      "time_ms": 4.713,
+      "rounds": 8,
+      "sent_bytes": 832,
+      "recv_bytes": 832,
+      "entries": 2
+    },
+    "verify": {
+      "time_ms": 0.978,
+      "rounds": 1,
+      "sent_bytes": 52,
+      "recv_bytes": 52,
+      "entries": 1
+    }
+  },
+  "verify_p0": "ACCEPT",
+  "terminal_p0": "SUCCESS"
+}

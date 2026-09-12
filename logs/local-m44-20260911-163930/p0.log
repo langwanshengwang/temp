@@ -1,0 +1,47 @@
+[config] self=P0 mldsa=ML-DSA-44 batch_K=1 pool_L=8 pool_mode=refill open_check=strict worker_threads=0 timeout=900s
+[config] P0 endpoint=127.0.0.1:9001 dfss_port=10101 (self)
+[config] P1 endpoint=127.0.0.1:9002 dfss_port=10301
+[P0] 打开与对方的协议信道（P0 监听 127.0.0.1:9001，P1 主动连接）…
+[P0] 启动：2-of-2 门限 ML-DSA-44，无协调方；本方同时是签名方 P0 与 DFSS 比较方 C0
+[P0] 握手完成：session_id=1988587602，sid=527087f6…，双方参数与待签消息一致
+[P0] DKeyGen 完成：rho=edce…  pk_digest=0xc74ec0bd53aadc56  t_digest=0xa99a144620d11f68  本方 Shamir 点 x=1
+[P0] OpenCheck[DKeyGen attempt=1]: T=OK(1024)  rows=16  error<=q^-16  => PASS
+[P0] DCFPrep：以 C0 身份与对方无 dealer 生成一次性 DFSS 密钥/掩码，池项 [0, 8)
+waiting for connection from client...connected
+[DFSS adapter C0] DFSS_CORE_OFFLINE: session=1988587602 item=1 core_offline_ms=786.421 dfss_sent_bytes=5430784 dfss_recv_bytes=647168 lanes=1024 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[DFSS adapter C0] DFSS_CORE_OFFLINE: session=1988587602 item=2 core_offline_ms=734.967 dfss_sent_bytes=5430784 dfss_recv_bytes=647168 lanes=1024 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[DFSS adapter C0] DFSS_CORE_OFFLINE: session=1988587602 item=3 core_offline_ms=739.404 dfss_sent_bytes=5430784 dfss_recv_bytes=647168 lanes=1024 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[DFSS adapter C0] DFSS_CORE_OFFLINE: session=1988587602 item=4 core_offline_ms=785.999 dfss_sent_bytes=5430784 dfss_recv_bytes=647168 lanes=1024 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[DFSS adapter C0] DFSS_CORE_OFFLINE: session=1988587602 item=5 core_offline_ms=761.494 dfss_sent_bytes=5430784 dfss_recv_bytes=647168 lanes=1024 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[DFSS adapter C0] DFSS_CORE_OFFLINE: session=1988587602 item=6 core_offline_ms=745.272 dfss_sent_bytes=5430784 dfss_recv_bytes=647168 lanes=1024 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[DFSS adapter C0] DFSS_CORE_OFFLINE: session=1988587602 item=7 core_offline_ms=787.066 dfss_sent_bytes=5430784 dfss_recv_bytes=647168 lanes=1024 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[DFSS adapter C0] DFSS_CORE_OFFLINE: session=1988587602 item=8 core_offline_ms=760.424 dfss_sent_bytes=5430784 dfss_recv_bytes=647168 lanes=1024 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+connected
+[P0] DSign 开始：batch K=1，pool L=8（refill），open_check=strict
+[DFSS adapter C0] DFSS_CORE_ONLINE_BATCH: session=1988587602 first_item=1 candidates=1 core_online_ms=12.968 dfss_sent_bytes=45048 dfss_recv_bytes=45048 lanes=1024 threads=8 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[P0] RejectS attempt=1：phi_0+phi_1=0 → ACCEPT（||z||_inf 检查通过）
+[P0] Algorithm7 attempt=1：z=PASS r0=REJECT ct0=PASS hint=PASS(69/80) r_audit=PASS → REJECT（注意：此候选的 z 已向双方打开）
+[P0] 批次 [1,1] 无可接受候选，进入下一批
+[DFSS adapter C0] DFSS_CORE_ONLINE_BATCH: session=1988587602 first_item=2 candidates=1 core_online_ms=12.101 dfss_sent_bytes=45048 dfss_recv_bytes=45048 lanes=1024 threads=8 bits=24 mic_mode=hierarchical endpoint_batched=1 or_batched=1
+[P0] RejectS attempt=2：phi_0+phi_1=0 → ACCEPT（||z||_inf 检查通过）
+[P0] Algorithm7 attempt=2：z=PASS r0=PASS ct0=PASS hint=PASS(62/80) r_audit=PASS → ACCEPT
+[P0] OpenCheck[DSign attempt=2]: COM=OK(2816) W=OK(1024) Z=OK(1024) R=OK(1280) DEC=OK(3079)  rows=16  error<=q^-16  => PASS
+[P0] Verify：标准 ML-DSA-44 验证 ACCEPT；两方签名摘要一致
+
+==================== P0 SUMMARY ====================
+[P0] phase=handshake          time_ms=     0.346 rounds=     1 sent_bytes=       144 recv_bytes=       144 entries=1
+[P0] phase=dkeygen            time_ms=     2.449 rounds=     3 sent_bytes=     21616 recv_bytes=     21616 entries=1
+[P0] phase=dcf_prep           time_ms=  7333.004 rounds=     2 sent_bytes=        48 recv_bytes=        48 entries=1
+[P0] phase=sign_attempt       time_ms=     1.462 rounds=     4 sent_bytes=     23232 recv_bytes=     23232 entries=2
+[P0] phase=rejects_dcf_online time_ms=    27.275 rounds=     6 sent_bytes=      6384 recv_bytes=      6384 entries=2
+[P0] phase=open_zr_alg7       time_ms=     1.557 rounds=     4 sent_bytes=     14016 recv_bytes=     14016 entries=2
+[P0] phase=open_check         time_ms=     4.131 rounds=     8 sent_bytes=       832 recv_bytes=       832 entries=2
+[P0] phase=verify             time_ms=     0.880 rounds=     1 sent_bytes=        52 recv_bytes=        52 entries=1
+[P0] phase=TOTAL(protocol ch) time_ms=  7371.103 rounds=    29 sent_bytes=     66324 recv_bytes=     66324
+[P0] note: 上面的字节数只统计 P0-P1 协议信道；DFSS 内部 2PC 流量由适配器单独统计。
+[P0] dcf: pool_items_generated=8 segments=1 refills=0 keygen_ms=7332.615 eval_ms=26.142
+[P0] rejects: attempts=2 batches=2 dcf_accepts=2 dcf_rejects=0 opened_candidates=2 alg7_rejects_after_open=1 (z=0 r0=1 ct0=0 hint=0)
+[P0] open_check: mode=strict checks=2 items=6
+[P0] audit: 由双方都知道的 (w, z, t) 可算出 c*s2 = w - (Az - ct)，本次 ||c*s2||_inf=44（确为短向量，可恢复 s2）。这是协议边界而非实现错误。
+[P0] verify_result=ACCEPT terminal_reason=SUCCESS accept_attempt=2 attempts=2 hint_ones=62 signature_sha3=389dd2f40fe116d43b393d3ba88fd0e10ef1db4aafbcb37ca5fb19fc5f9c3647
+====================================================

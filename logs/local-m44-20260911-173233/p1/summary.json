@@ -1,0 +1,20 @@
+{
+  "party": 1,
+  "mldsa_mode": 44,
+  "verify_result": "ACCEPT",
+  "terminal_reason": "SUCCESS",
+  "session_id": 856832592,
+  "signature_sha3": "645b6fa61e66220fe86b554b34822380e06544a6a99153554b873cf1ec16b98f",
+  "config": {"batch_size": 1, "pool_size": 8, "pool_mode": "refill", "open_check": "strict"},
+  "stats": {"attempts": 5, "batches": 5, "accept_attempt": 5, "dcf_accepts": 5, "dcf_rejects": 0, "opened_candidates": 5, "alg7_rejects_after_open": 4, "alg7_z_fail": 0, "alg7_r0_fail": 4, "alg7_ct0_fail": 0, "alg7_hint_fail": 1, "pool_items_generated": 8, "pool_segments": 1, "pool_refills": 0, "open_checks": 2, "open_check_items": 6, "dfss_keygen_ms": 9529.732, "dfss_eval_ms": 71.307, "hint_ones": 48, "cs2_audit_norm": 44},
+  "phases": {
+    "handshake": {"time_ms": 0.257, "rounds": 1, "sent_bytes": 144, "recv_bytes": 144, "entries": 1},
+    "dkeygen": {"time_ms": 2.395, "rounds": 3, "sent_bytes": 21616, "recv_bytes": 21616, "entries": 1},
+    "dcf_prep": {"time_ms": 9530.237, "rounds": 2, "sent_bytes": 48, "recv_bytes": 48, "entries": 1},
+    "sign_attempt": {"time_ms": 4.092, "rounds": 10, "sent_bytes": 58080, "recv_bytes": 58080, "entries": 5},
+    "rejects_dcf_online": {"time_ms": 73.702, "rounds": 15, "sent_bytes": 15960, "recv_bytes": 15960, "entries": 5},
+    "open_zr_alg7": {"time_ms": 3.447, "rounds": 10, "sent_bytes": 35040, "recv_bytes": 35040, "entries": 5},
+    "open_check": {"time_ms": 4.713, "rounds": 8, "sent_bytes": 832, "recv_bytes": 832, "entries": 2},
+    "verify": {"time_ms": 0.978, "rounds": 1, "sent_bytes": 52, "recv_bytes": 52, "entries": 1}
+  }
+}
